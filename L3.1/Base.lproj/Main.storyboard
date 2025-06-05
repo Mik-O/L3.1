@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o5P-WB-e2t">
-                                <rect key="frame" x="30.5" y="233" width="314" height="201"/>
+                                <rect key="frame" x="30.5" y="170" width="314" height="201"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZM-AF-YwT">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
@@ -40,7 +40,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="LogInPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaZ-Iq-gQE"/>
-                                            <segue destination="Ui9-YL-nbt" kind="presentation" modalPresentationStyle="fullScreen" id="KT4-TS-MOu"/>
+                                            <segue destination="Ui9-YL-nbt" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="KT4-TS-MOu"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh0-sH-ho9">
@@ -74,8 +74,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="o5P-WB-e2t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ElM-Kv-BQv"/>
-                            <constraint firstItem="o5P-WB-e2t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qeh-pt-Udn"/>
+                            <constraint firstItem="o5P-WB-e2t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UZn-gB-jtZ"/>
+                            <constraint firstItem="o5P-WB-e2t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="g8h-CL-Ji5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,17 +95,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="KbX-df-7kI">
-                                <rect key="frame" x="151.5" y="50" width="72" height="186"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="KbX-df-7kI">
+                                <rect key="frame" x="151.5" y="50" width="72" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2r-WQ-7Wf">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
+                                        <rect key="frame" x="5.5" y="0.0" width="61" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" systemColor="systemGray6Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAr-xz-ywV">
-                                        <rect key="frame" x="0.0" y="106" width="72" height="80"/>
+                                        <rect key="frame" x="0.0" y="150" width="72" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="67"/>
                                         <color key="textColor" systemColor="systemGray6Color"/>
                                         <nil key="highlightedColor"/>
@@ -119,6 +119,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Q7o-i8-LDx" kind="unwind" unwindAction="unwindSegueWithSegue:" id="g0Y-r1-VwO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rlO-BO-Ut1"/>
@@ -135,6 +138,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RV7-o6-hdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Q7o-i8-LDx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="775" y="3"/>
         </scene>
