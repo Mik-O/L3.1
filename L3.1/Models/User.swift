@@ -13,7 +13,7 @@ struct User {
 
 struct Person {
     let name: String
-    let surnName: String
+    let surName: String
     let placeOfWork: String
     let age: Int
     let email: String
@@ -21,7 +21,7 @@ struct Person {
     let aboutPerson: String
     
     var fullName: String {
-        "\(name) \(surnName)"
+        "\(name) \(surName)"
     }
 
 }
@@ -33,9 +33,10 @@ extension User {
             password: "Password",
             person: Person(
                 name: "Tim",
-                surnName: "Cook",
+                surName: "Cook",
                 placeOfWork: "Apple",
-                age: 30, email: "tim@apple.com",
+                age: 30,
+                email: "tim@apple.com",
                 hobby: "Swift",
                 aboutPerson: "Американский топ-менеджер, миллиардер. Генеральный директор компании Apple. Пришёл в компанию в марте 1998 года. Занял должность гендиректора после отставки (в связи с продолжительной болезнью) Стива Джобса 24 августа 2011 года."
             )
