@@ -6,7 +6,7 @@
 //
 
 struct User {
-    let username: String
+    let userName: String
     let password: String
     let person: Person
 }
@@ -19,13 +19,17 @@ struct Person {
     let email: String
     let hobby: String
     let aboutPerson: String
+    
+    var fullName: String {
+        "\(name) \(surnName)"
+    }
 
 }
 
 extension User {
-    static func getUser() -> User {
+    static func getUserData() -> User {
         User(
-            username: "User",
+            userName: "User",
             password: "Password",
             person: Person(
                 name: "Tim",
